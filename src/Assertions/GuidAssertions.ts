@@ -17,4 +17,30 @@ export class GuidArgumentAssertionBuilder extends ArgumentAssertionBuilder<Guid>
         }
         return this;
     }
+
+    /**
+     * Determines whether the argument is one of the specified options.
+     * @param options
+     */
+    isOneOf(...options: Guid[]): this
+    {
+        let matched = false;
+
+        for (let option of options)
+        {
+            matched = option.toString() === this.argument.toString();
+
+            if (matched)
+            {
+                break;
+            }
+        }
+        /*
+        if (!matched)
+        {
+            throw new ArgumentException(this.argumentName, `Argument '${this.argumentName}' must be one of ('${options.join("', '")}')`);
+        }
+        */
+        return this;
+    }
 }
