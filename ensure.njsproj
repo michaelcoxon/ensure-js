@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{54c0ca6f-81d2-412f-bd48-2ad703700684}</ProjectGuid>
     <ProjectHome />
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>
     </StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,6 +31,7 @@
     <Content Include="base-tsconfig.json" />
     <Content Include="LICENSE" />
     <Content Include="package.json" />
+    <Content Include="README.md" />
     <Content Include="src\config\es2015\tsconfig.json" />
     <Content Include="src\config\es5\tsconfig.json" />
     <Content Include="src\config\es6\tsconfig.json" />
