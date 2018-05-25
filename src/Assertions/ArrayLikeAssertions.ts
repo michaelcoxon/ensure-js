@@ -1,5 +1,5 @@
 ﻿import { ArgumentAssertionBuilder } from "../ArgumentAssertionBuilder";
-import { ArgumentNullException, ArgumentException, ArgumentUndefinedException } from "@michaelcoxon/utilities";
+import { ArgumentNullException, ArgumentException, ArgumentUndefinedException, NotSupportedException } from "@michaelcoxon/utilities";
 
 
 export class ArrayLikeArgumentAssertionBuilder<T> extends ArgumentAssertionBuilder<ArrayLike<T>>
@@ -22,4 +22,8 @@ export class ArrayLikeArgumentAssertionBuilder<T> extends ArgumentAssertionBuild
         return this;
     }
 
+    isOneOf(...options: ArrayLike<T>[]): this
+    {
+        throw new NotSupportedException();
+    }
 }

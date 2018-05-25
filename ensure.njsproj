@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{54c0ca6f-81d2-412f-bd48-2ad703700684}</ProjectGuid>
     <ProjectHome />
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>
     </StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
@@ -54,6 +54,9 @@
     <TypeScriptCompile Include="src\Assertions\GuidAssertions.ts" />
     <TypeScriptCompile Include="src\Assertions\StringAssertions.ts" />
     <TypeScriptCompile Include="src\index.ts" />
+    <TypeScriptCompile Include="tests\ensure-arraylike.spec.ts">
+      <TestFramework>Mocha</TestFramework>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="tests\ensure-guids.spec.ts">
       <TestFramework>Mocha</TestFramework>
     </TypeScriptCompile>

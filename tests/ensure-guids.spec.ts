@@ -130,15 +130,9 @@ describe("Ensure a Guid isOneOf", () =>
 
     it("'guid1' should not throw an exception", () =>
     {
-        let guid = Guid.parseString(guid1.toString());
         try
         {
-            console.log("asdF");
-
-
-            console.log(guid);
-
-            testMethod(guid);
+            testMethod(Guid.parseString(guid1.toString()));
         }
         catch
         {
@@ -186,9 +180,45 @@ describe("Ensure a Guid isOneOf", () =>
 
 describe("Ensure a Guid matches", () =>
 {
+    const guid = Guid.newGuid();
+
+
     function testMethod(guid: Guid | null)
     {
-        Ensure.arg(guid, "guid").matches(s => s === Guid.newGuid());
+        Ensure.arg(guid, "guid").matches(s => s == guid);
+    }
+
+    it("'Guid.newGuid()' should not throw an exception", () =>
+    {
+        try
+        {
+            testMethod(Guid.parseString(guid.toString()));
+        }
+        catch
+        {
+            assert.fail();
+        }
+    });
+
+    it("'null' should throw an exception", (done) =>
+    {
+        try
+        {
+            testMethod(null);
+            assert.fail();
+        }
+        catch
+        {
+            done();
+        }
+    });
+});
+
+describe("Ensure a Guid isValidGuid", () =>
+{
+    function testMethod(guid: Guid | null)
+    {
+        Ensure.arg(guid, "guid").isValidGuid();
     }
 
     it("'Guid.newGuid()' should not throw an exception", () =>
@@ -208,6 +238,19 @@ describe("Ensure a Guid matches", () =>
         try
         {
             testMethod(null);
+            assert.fail();
+        }
+        catch
+        {
+            done();
+        }
+    });
+
+    it("'Guid.empty' should throw an exception", (done) =>
+    {
+        try
+        {
+            testMethod(Guid.empty);
             assert.fail();
         }
         catch

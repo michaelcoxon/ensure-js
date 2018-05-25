@@ -35,12 +35,12 @@ export class GuidArgumentAssertionBuilder extends ArgumentAssertionBuilder<Guid>
                 break;
             }
         }
-        /*
+
         if (!matched)
         {
             throw new ArgumentException(this.argumentName, `Argument '${this.argumentName}' must be one of ('${options.join("', '")}')`);
         }
-        */
+
         return this;
     }
 }
