@@ -1,5 +1,5 @@
-﻿import { ArgumentAssertionBuilder, IArgumentAssertionBuilder, AssertionType } from "../ArgumentAssertionBuilder";
-import { ArgumentNullException, ArgumentException, Strings, ArgumentUndefinedException, Exception } from "@michaelcoxon/utilities";
+﻿import { ArgumentAssertionBuilder, IArgumentAssertionBuilder, AssertionType } from '../ArgumentAssertionBuilder';
+import { ArgumentNullException, ArgumentException, Strings, ArgumentUndefinedException, Exception } from '@michaelcoxon/utilities';
 
 
 export class StringArgumentAssertionBuilder

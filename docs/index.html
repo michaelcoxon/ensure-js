@@ -64,6 +64,48 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<p>﻿# ensure-js
+				<em>A port of <a href="https://github.com/michaelcoxon/EnsureFramework">EnsureFramework</a> for JavaScript/TypeScript.</em></p>
+				<hr>
+				<blockquote>
+					<p>Argument assertion with ease</p>
+				</blockquote>
+				<p>Ensure is designed to take the pain out of null checking and making sure (ensuring)
+					your methods are being used the way they were intended and throwing exceptions when unsupported
+				values are passed to them.</p>
+				<p>You can make sure values are in a specific range or simply make sure that an argument is not
+				null.</p>
+				<p>It was designed to be readable and fluent based, meaning you can chain ensurables together and
+				the first one that fails will result in the exception.</p>
+				<h2 id="installation">Installation</h2>
+				<p>It&#39;s in NPM man...</p>
+				<pre><code class="lang-sh">npm i @michaelcoxon/ensure --save
+</code></pre>
+				<h2 id="usage">Usage</h2>
+				<blockquote>
+					<p><strong>NOTE</strong>: Check the tests for full documentation. I am getting to filling out this
+					readme file as I can. The tests have full coverage though.</p>
+				</blockquote>
+				<p>It&#39;s designed to be a one-liner to assert that your arguments are within the bounds of the method. So using
+				it is as simple as...</p>
+				<pre><code class="lang-js">Ensure.arg(         <span class="hljs-comment">// Step 1: open up the fluent interface</span>
+    myArgument,     <span class="hljs-comment">// Step 2: pass in your argument</span>
+    <span class="hljs-string">"myArgument"</span>    <span class="hljs-comment">// Step 3: tell it the name of your argument</span>
+    )               <span class="hljs-comment">// Step 4: ???</span>
+    .isNotNull();   <span class="hljs-comment">// Step 5: Make your assertions/profit!!</span>
+</code></pre>
+				<p>Your assertions can be chained and will execute in the order defined for example</p>
+				<pre><code class="lang-js">Ensure.arg(str, <span class="hljs-string">"str"</span>)
+    .isNotNull()
+    .isOneOf(<span class="hljs-string">"str"</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
+</code></pre>
+				<h3 id="strings">Strings</h3>
+				<h4 id="ensure-a-string-is-not-null">Ensure a string is not null</h4>
+				<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testMethod</span>(<span class="hljs-params">str: string | null</span>)
+</span>{
+    Ensure.arg(str, <span class="hljs-string">"str"</span>).isNotNull();
+}
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

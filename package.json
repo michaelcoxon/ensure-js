@@ -1,6 +1,6 @@
 {
   "name": "@michaelcoxon/ensure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helpers for method argument checking",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,4 +1,4 @@
-﻿import { ArgumentNullException, ArgumentUndefinedException, ConstructorFor, ArgumentException, Func1, Exception } from "@michaelcoxon/utilities";
+﻿import { ArgumentNullException, ArgumentUndefinedException, ConstructorFor, ArgumentException, Func1, Exception } from '@michaelcoxon/utilities';
 
 export type AssertionType<T> = T | undefined | null
 
