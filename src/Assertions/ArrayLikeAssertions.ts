@@ -1,5 +1,8 @@
-﻿import { ArgumentAssertionBuilder } from '../ArgumentAssertionBuilder';
-import { ArgumentNullException, ArgumentException, ArgumentUndefinedException, NotSupportedException } from '@michaelcoxon/utilities';
+﻿import ArgumentException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentException';
+import ArgumentNullException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentNullException';
+import ArgumentUndefinedException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentUndefinedException';
+import NotSupportedException from '@michaelcoxon/utilities/lib/Exceptions/NotSupportedException';
+import { ArgumentAssertionBuilder } from '../ArgumentAssertionBuilder';
 
 
 export class ArrayLikeArgumentAssertionBuilder<T> extends ArgumentAssertionBuilder<ArrayLike<T>>

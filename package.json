@@ -1,6 +1,6 @@
 {
   "name": "@michaelcoxon/ensure",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helpers for method argument checking",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -40,7 +40,8 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "@michaelcoxon/utilities": "^1.4.0"
+    "@michaelcoxon/utilities": "^10.0.0-alpha.1",
+    "tslib": "^1.9.1"
   },
   "-vs-binding": {
     "ProjectOpened": [

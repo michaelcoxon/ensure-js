@@ -1,9 +1,10 @@
 ﻿
-import { ArgumentNullException, ArgumentUndefinedException, Guid, NotSupportedException } from '@michaelcoxon/utilities';
 import { StringArgumentAssertionBuilder } from './Assertions/StringAssertions';
 import { IArgumentAssertionBuilder, ArgumentAssertionBuilder, AssertionType } from './ArgumentAssertionBuilder';
 import { GuidArgumentAssertionBuilder } from './Assertions/GuidAssertions';
 import { ArrayLikeArgumentAssertionBuilder } from './Assertions/ArrayLikeAssertions';
+import NotSupportedException from '@michaelcoxon/utilities/lib/Exceptions/NotSupportedException';
+import Guid from '@michaelcoxon/utilities/lib/Guid';
 
 export namespace Ensure
 {
