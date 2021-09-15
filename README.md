@@ -1,6 +1,9 @@
 ﻿# ensure-js
 *A port of [EnsureFramework](https://github.com/michaelcoxon/EnsureFramework) for JavaScript/TypeScript.*
 
+# Everything here is continued in @michaelcoxon/utilities I merged the libraries.
+
+
 ---
 > Argument assertion with ease
 

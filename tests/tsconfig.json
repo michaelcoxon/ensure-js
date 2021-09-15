@@ -33,6 +33,6 @@
     "forkChecker": true
   },
   "include": [
-    "./src/**/*"
+    "./**/*"
   ],
 }

@@ -10,6 +10,7 @@ const libraryName = 'ensure';
 function DtsBundlePlugin() { }
 DtsBundlePlugin.prototype.apply = function (compiler)
 {
+    /*
     compiler.plugin('done', function ()
     {
         var dts = require('dts-bundle');
@@ -21,6 +22,7 @@ DtsBundlePlugin.prototype.apply = function (compiler)
             outputAsModuleFolder: true // to use npm in-package typings
         });
     });
+    */
 };
 
 module.exports = () =>
@@ -29,11 +31,13 @@ module.exports = () =>
     const isDevBuild = !(env && env === 'production');
 
     return [{
-        entry: { 'index': `./${srcDir}/index.ts` },
-        resolve: { extensions: ['.ts'] },
+        mode: isDevBuild ? 'development' : 'production',
+        entry: { 'index': `./${libDir}/index.js` },
+        resolve: { extensions: ['.js'] },
+        devtool: 'source-map',
         output: {
             path: path.join(__dirname, bundleOutputDir),
-            filename: `[name]${isDevBuild ? ".debug" : ""}.js`,
+            filename: `[name].js`,
             publicPath: 'dist/',
             library: libraryName,
             libraryTarget: 'umd'
@@ -44,9 +48,8 @@ module.exports = () =>
         module: {
             rules: [
                 {
-                    test: /\.ts$/,
-                    include: /src/,
-                    use: 'awesome-typescript-loader?configFileName=./src/config/es5/tsconfig.json'
+                    test: /\.js$/,
+                    include: /lib/,
                 }
             ]
         },

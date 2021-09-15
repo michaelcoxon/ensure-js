@@ -3,11 +3,16 @@
   "version": "1.0.2",
   "description": "Helpers for method argument checking",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "sideEffects": false,
   "scripts": {
+    "build-typescript": "tsc",
+    "version": "npm -v && node -v",
+    "coverage": "nyc --reporter=html --reporter=text jest",
     "run-tests": "mocha -r ts-node/register tests/**/*.spec.ts",
     "test": "npm-run-all -s build-prod -p run-tests",
-    "build-prod": "SET NODE_ENV=production&& webpack --no-color",
+    "build-prod": "SET NODE_ENV=production&& webpack",
     "prepack": "npm-run-all -s test build-doc",
     "build-doc": "typedoc --out docs src&& copy .\\.nojekyll .\\docs&& copy .\\_config.yml .\\docs"
   },
@@ -26,7 +31,7 @@
     "@types/mocha": "^2.2.48",
     "@types/prop-types": "^15.5.3",
     "@types/webpack-env": "^1.13.5",
-    "awesome-typescript-loader": "^3.4.1",
+    "awesome-typescript-loader": "^5.2.1",
     "chai": "^4.1.2",
     "dts-bundle": "^0.7.3",
     "file-loader": "^0.11.2",
@@ -35,13 +40,16 @@
     "npm-run-all": "^4.1.2",
     "ts-node": "^4.0.2",
     "typedoc": "^0.11.1",
-    "typescript": "^2.7.1",
-    "webpack": "^2.7.0",
-    "webpack-node-externals": "^1.6.0"
+    "typescript": "^4.4.3",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-cyclic-dependency-checker": "^0.0.1",
+    "webpack-log": "^3.0.2",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@michaelcoxon/utilities": "^10.0.0-alpha.1",
-    "tslib": "^1.9.1"
+    "@michaelcoxon/utilities": "^10.0.0-alpha.2",
+    "tslib": "^2.3.1"
   },
   "-vs-binding": {
     "ProjectOpened": [
