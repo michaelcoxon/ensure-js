@@ -1,5 +1,8 @@
-﻿import { ArgumentAssertionBuilder, IArgumentAssertionBuilder, AssertionType } from '../ArgumentAssertionBuilder';
-import { ArgumentNullException, ArgumentException, Strings, ArgumentUndefinedException, Exception } from '@michaelcoxon/utilities';
+﻿import ArgumentException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentException';
+import ArgumentNullException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentNullException';
+import ArgumentUndefinedException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentUndefinedException';
+import { empty } from '@michaelcoxon/utilities/lib/Strings/_consts';
+import { ArgumentAssertionBuilder, IArgumentAssertionBuilder, AssertionType } from '../ArgumentAssertionBuilder';
 
 
 export class StringArgumentAssertionBuilder
@@ -17,7 +20,7 @@ export class StringArgumentAssertionBuilder
         {
             throw new ArgumentUndefinedException(this.argumentName);
         }
-        if (this.argument === Strings.empty)
+        if (this.argument === empty)
         {
             throw new ArgumentException(this.argumentName);
         }

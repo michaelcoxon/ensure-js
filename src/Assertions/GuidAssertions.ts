@@ -1,4 +1,5 @@
-﻿import { Guid, ArgumentException } from '@michaelcoxon/utilities';
+﻿import ArgumentException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentException';
+import Guid from '@michaelcoxon/utilities/lib/Guid';
 import { ArgumentAssertionBuilder } from '../ArgumentAssertionBuilder';
 
 

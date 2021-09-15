@@ -1,4 +1,8 @@
-﻿import { ArgumentNullException, ArgumentUndefinedException, ConstructorFor, ArgumentException, Func1, Exception } from '@michaelcoxon/utilities';
+﻿import ArgumentException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentException';
+import ArgumentNullException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentNullException';
+import ArgumentUndefinedException from '@michaelcoxon/utilities/lib/Exceptions/ArgumentUndefinedException';
+import Exception from '@michaelcoxon/utilities/lib/Exceptions/Exception';
+import { ConstructorFor, Func1 } from '@michaelcoxon/utilities/lib/Types';
 
 export type AssertionType<T> = T | undefined | null
 
@@ -66,7 +70,7 @@ export class ArgumentAssertionBuilder<T> implements IArgumentAssertionBuilder<T>
         }
         catch (ex)
         {
-            innerException = ex;
+            innerException = ex as Exception;
             result = false;
         }
         if (!result)
